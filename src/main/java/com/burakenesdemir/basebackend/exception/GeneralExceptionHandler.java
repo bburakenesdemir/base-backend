@@ -15,13 +15,13 @@ import java.util.Map;
 @Slf4j
 @ControllerAdvice
 public class GeneralExceptionHandler extends ResponseEntityExceptionHandler {
-
     private static final String logMessage = "\n Class : {}\n Line : {}\n Message : {}";
+
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException e,
-                                                          HttpHeaders headers,
-                                                          HttpStatus status,
-                                                          WebRequest request){
+                                                               HttpHeaders headers,
+                                                               HttpStatus status,
+                                                               WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         e.getBindingResult().getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
         log.error(logMessage, e.getStackTrace()[0].getClassName(), e.getStackTrace()[0].getLineNumber(), e.getMessage());

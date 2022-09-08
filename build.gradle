@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.burakenesdemir'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2'
 sourceCompatibility = '17'
 
 configurations {
@@ -22,6 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '3.1.4'
 	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.7.3'
 	compileOnly 'org.projectlombok:lombok'

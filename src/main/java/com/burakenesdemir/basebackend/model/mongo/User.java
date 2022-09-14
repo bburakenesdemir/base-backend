@@ -3,11 +3,14 @@ package com.burakenesdemir.basebackend.model.mongo;
 import com.burakenesdemir.basebackend.model.base.IdEntity;
 import com.burakenesdemir.basebackend.model.type.RoleEnum;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class User extends IdEntity {
     private String username;

@@ -1,17 +1,15 @@
 package com.burakenesdemir.basebackend.model.mongo;
 
 import com.burakenesdemir.basebackend.model.base.IdEntity;
+import com.burakenesdemir.basebackend.model.dto.UserDTO;
 import com.burakenesdemir.basebackend.model.type.RoleEnum;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
+@EqualsAndHashCode(callSuper=false)
 public class User extends IdEntity {
     private String username;
 
@@ -25,5 +23,15 @@ public class User extends IdEntity {
 
     private String emailAddress;
 
-    private RoleEnum role;
+    private RoleEnum roleEnum;
+
+    public User(UserDTO.RegisterDto dto){
+        username = dto.getUsername();
+        password = dto.getPassword();
+        name = dto.getFirstName();
+        surname = dto.getLastName();
+        phoneNumber = dto.getPhone();
+        emailAddress = dto.getEmail();
+        roleEnum = RoleEnum.DEFAULT_USER;
+    }
 }

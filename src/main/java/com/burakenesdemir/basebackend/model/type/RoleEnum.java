@@ -1,8 +1,8 @@
 package com.burakenesdemir.basebackend.model.type;
 
-public class RoleEnum {
-    public static final String DEFAULT_USER = "1";
-
+public enum RoleEnum {
+    DEFAULT_USER("1", "DEFAULT_USER"),
+    ADMIN_USER("2", "ADMIN_USER");
     private final String roleName;
     private final String roleId;
 

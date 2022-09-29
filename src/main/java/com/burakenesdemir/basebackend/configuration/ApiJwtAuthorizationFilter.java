@@ -56,7 +56,7 @@ public class ApiJwtAuthorizationFilter extends OncePerRequestFilter {
         String token = getToken(request);
         String username = jwtTokenService.getUsernameFromToken(token);
         User user = userService.getByUsername(username);
-        RoleEnum role = user.getRole();
+        RoleEnum role = user.getRoleEnum();
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
         return new UsernamePasswordAuthenticationToken(username, user, authorities);

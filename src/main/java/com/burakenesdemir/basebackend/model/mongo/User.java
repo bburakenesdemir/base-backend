@@ -3,15 +3,12 @@ package com.burakenesdemir.basebackend.model.mongo;
 import com.burakenesdemir.basebackend.model.base.IdEntity;
 import com.burakenesdemir.basebackend.model.type.RoleEnum;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
+@EqualsAndHashCode(callSuper=false)
 public class User extends IdEntity {
     private String username;
 
@@ -23,7 +20,7 @@ public class User extends IdEntity {
 
     private String phoneNumber;
 
-    private String emailAddress;
+    private String email;
 
-    private RoleEnum role;
+    private RoleEnum roleEnum;
 }

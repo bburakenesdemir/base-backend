@@ -4,4 +4,6 @@ import com.burakenesdemir.basebackend.model.mongo.User;
 
 public interface UserService {
     User getByUsername(String username);
+
+    User register(User user);
 }

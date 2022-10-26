@@ -9,6 +9,7 @@ public interface UserDTO {
 
     @Data
     class RegisterDto {
+
         @NotEmpty(message = "Username not be null!")
         private String username;
         @NotEmpty(message = "Email not be null!")
@@ -16,11 +17,11 @@ public interface UserDTO {
         private String password;
         private String passwordConfirmation;
         @NotEmpty(message = "Name field not be null!")
-        private String firstName;
+        private String name;
         @NotEmpty(message = "Lastname field not be null!")
-        private String lastName;
+        private String surname;
         @Pattern(regexp = "[0-9\\s]{10}")
-        private String phone;
+        private String phoneNumber;
     }
 
     @Data

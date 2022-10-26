@@ -14,7 +14,7 @@ RUN gradle clean build -x test
 
 # actual container
 FROM eclipse-temurin:18.0.2.1_1-jdk-focal
-ENV ARTIFACT_NAME=base-backend-0.0.2.jar
+ENV ARTIFACT_NAME=user-service-0.0.2.jar
 ENV APP_HOME=/usr/app/
 
 WORKDIR $APP_HOME
